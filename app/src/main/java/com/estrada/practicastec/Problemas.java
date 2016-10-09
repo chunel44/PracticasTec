@@ -23,6 +23,6 @@ public class Problemas {
         minutos = (decimal%3600)/60;
         segundos = (decimal%36000)%3600;
 
-        return  decimal+" segundos tiene: \n"+horas + " horas \n"+minutos+" minutos \n"+segundos+" segundos \n";
+        return  decimal+" segundos tiene: \n"+(int)horas + " horas \n"+(int)minutos+" minutos \n"+(int)segundos+" segundos \n";
     }
 }
