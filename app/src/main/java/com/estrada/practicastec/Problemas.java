@@ -16,4 +16,13 @@ public class Problemas {
 
         return "El monto total es:" +String.format("%8.2f",monto) + "\n" + "El interes a pagar es:" + String.format("%8.2f\n",interes);
     }
+
+    public String Problema3(Double decimal){
+        double horas, minutos , segundos;
+        horas = decimal/3600;
+        minutos = (decimal%3600)/60;
+        segundos = (decimal%36000)%3600;
+
+        return  decimal+" segundos tiene: \n"+horas + " horas \n"+minutos+" minutos \n"+segundos+" segundos \n";
+    }
 }
