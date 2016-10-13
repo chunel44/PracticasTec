@@ -1,5 +1,8 @@
 package com.estrada.practicastec;
 
+import android.support.design.widget.Snackbar;
+import android.view.View;
+
 /**
  * Created by estra on 29/09/2016.
  */
@@ -24,5 +27,9 @@ public class Problemas {
         segundos = (decimal%36000)%3600;
 
         return  decimal+" segundos tiene: \n"+(int)horas + " horas \n"+(int)minutos+" minutos \n"+(int)segundos+" segundos \n";
+    }
+
+    public void Snack(View view){
+        Snackbar.make(view,"Agregue información",Snackbar.LENGTH_LONG).show();
     }
 }

@@ -42,15 +42,20 @@ public class Problema8Fragment extends Fragment {
     }
 
     @OnClick(R.id.calcular)
-    public void onClick() {
-        Double pies = Double.parseDouble(Pies.getText().toString());
-        Double metro = Double.parseDouble(Metro.getText().toString());
-        Double pul, yar, met, mil;
-        pul = (pies*12)+(metro/0.0254);
-        yar = (pies/3) + (metro*1.09361);
-        met = (pies*0.3045)+metro;
-        mil = (pies*0.00019)+(metro*0.00062);
+    public void onClick(View view) {
+        Problemas prob = new Problemas();
+        if(!Pies.getText().toString().isEmpty()&&!!Metro.getText().toString().isEmpty()) {
+            Double pies = Double.parseDouble(Pies.getText().toString());
+            Double metro = Double.parseDouble(Metro.getText().toString());
+            Double pul, yar, met, mil;
+            pul = (pies * 12) + (metro / 0.0254);
+            yar = (pies / 3) + (metro * 1.09361);
+            met = (pies * 0.3045) + metro;
+            mil = (pies * 0.00019) + (metro * 0.00062);
 
-        resultado.setText("La suma en pulgadas es: "+pul+"\nLa suma en yardas es: "+yar+"\nLa suma en metros es: "+met+"\nLa suma en millas es: "+mil);
+            resultado.setText("La suma en pulgadas es: " + pul + "\nLa suma en yardas es: " + yar + "\nLa suma en metros es: " + met + "\nLa suma en millas es: " + mil);
+        }else{
+            prob.Snack(view);
+        }
     }
 }

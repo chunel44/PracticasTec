@@ -43,7 +43,9 @@ public class Problema4Fragment extends Fragment {
     }
 
     @OnClick(R.id.calcular4)
-    public void onClick() {
+    public void onClick(View view) {
+        Problemas prob = new Problemas();
+        if(!Dinero.getText().toString().isEmpty()){
         double monto = Double.parseDouble(Dinero.getText().toString());
         int billete100, billete200, billete50, billete20, billete10;
         int moneda5, moneda1, moneda50c, moneda10c, monedaCentavo;
@@ -72,5 +74,9 @@ public class Problema4Fragment extends Fragment {
 
         resultado4.setText(" Billetes de 200: " + billete200+"\n Billetes de 100: " + billete100+"\n Billetes de 50: " + billete50+"\n Billetes de 20: " + billete20+"\n Billetes de 10: " + billete10
                 +"\n Monedas de 5: " + moneda5+"\n Monedas de 1: " + moneda1+"\n Monedas de 50c: " + moneda50c+"\n Monedas de 10c: " + moneda10c+"\n Monedas de 1c: " + monedaCentavo);
-    }
+        }else{
+            prob.Snack(view);
+        }
+        }
+
 }

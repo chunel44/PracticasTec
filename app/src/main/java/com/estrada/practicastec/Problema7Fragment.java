@@ -41,14 +41,19 @@ public class Problema7Fragment extends Fragment {
     }
 
     @OnClick(R.id.calcular)
-    public void onClick() {
-        Double CatetoO = Double.parseDouble(CatetoOp.getText().toString());
-        Double CatetoAd = Double.parseDouble(CatetoA.getText().toString());
+    public void onClick(View view) {
+        Problemas prob = new Problemas();
+        if(!CatetoOp.getText().toString().isEmpty()&&!!CatetoOp.getText().toString().isEmpty()) {
+            Double CatetoO = Double.parseDouble(CatetoOp.getText().toString());
+            Double CatetoAd = Double.parseDouble(CatetoA.getText().toString());
 
-        Double Hipotenusa = Math.sqrt(Math.pow(CatetoAd,2)+Math.pow(CatetoO,2));
+            Double Hipotenusa = Math.sqrt(Math.pow(CatetoAd, 2) + Math.pow(CatetoO, 2));
 
-        Double Parametro = CatetoAd + CatetoO + Hipotenusa;
+            Double Parametro = CatetoAd + CatetoO + Hipotenusa;
 
-        resultado.setText("Cateto Opuesto: "+CatetoO.toString().replace(".0","")+"\nCateto Adyacente: "+CatetoAd.toString().replace(".0","")+"\nHipotenusa: "+Hipotenusa.toString().replace(".0","")+"\nParametro: "+Parametro.toString().replace(".0",""));
+            resultado.setText("Cateto Opuesto: " + CatetoO.toString().replace(".0", "") + "\nCateto Adyacente: " + CatetoAd.toString().replace(".0", "") + "\nHipotenusa: " + Hipotenusa.toString().replace(".0", "") + "\nParametro: " + Parametro.toString().replace(".0", ""));
+        }else{
+            prob.Snack(view);
+        }
     }
 }
