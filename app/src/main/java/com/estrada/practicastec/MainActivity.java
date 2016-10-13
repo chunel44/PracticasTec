@@ -3,6 +3,8 @@ package com.estrada.practicastec;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +23,12 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static  Fragmentproblema1 fragment;
+
+    private final static String ABOUT_URL = "https://github.com/chunel44/PracticasTec";
+
+    public static String getAboutUrl() {
+        return ABOUT_URL;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +84,9 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(getAboutUrl()));
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
