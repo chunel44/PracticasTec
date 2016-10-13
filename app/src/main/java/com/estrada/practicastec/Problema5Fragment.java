@@ -39,10 +39,10 @@ public class Problema5Fragment extends Fragment {
     @OnClick(R.id.Conversion)
     public void onClick() {
         Double c = Double.parseDouble(Grados.getText().toString());
-        Double f = ((9/5)*c)+32;
-        Double k = c + 237.15;
+        Double f = (c*9/5)+(32);
+        Double k = c + 273.15;
         Double r = f + 459.7;
 
-        resultado5.setText("Grados Celsius: "+c+"\n Grados Fahrenheit: "+f+"\n Grados Kelvin: "+k+"\n Grados Rankine: "+r);
+        resultado5.setText("Grados Celsius: "+c+"\nGrados Fahrenheit: "+f+"\nGrados Kelvin: "+k+"\nGrados Rankine: "+r);
     }
 }
