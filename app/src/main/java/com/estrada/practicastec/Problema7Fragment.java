@@ -43,7 +43,7 @@ public class Problema7Fragment extends Fragment {
     @OnClick(R.id.calcular)
     public void onClick(View view) {
         Problemas prob = new Problemas();
-        if(!CatetoOp.getText().toString().isEmpty()&&!!CatetoOp.getText().toString().isEmpty()) {
+        if(!CatetoOp.getText().toString().isEmpty()&& !CatetoOp.getText().toString().isEmpty()) {
             Double CatetoO = Double.parseDouble(CatetoOp.getText().toString());
             Double CatetoAd = Double.parseDouble(CatetoA.getText().toString());
 

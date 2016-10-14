@@ -1,13 +1,22 @@
 package com.estrada.practicastec;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +42,7 @@ public class Problema5Fragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_problema5, container, false);
         ButterKnife.bind(this, view);
+
         return view;
     }
 
@@ -44,10 +54,11 @@ public class Problema5Fragment extends Fragment {
             Double f = (c * 9 / 5) + (32);
             Double k = c + 273.15;
             Double r = f + 459.7;
+            resultado5.setText("Grados Celsius: " + c.toString().replace(".0", "") + "                    Grados Fahrenheit: " + f + "\nGrados Kelvin: " + k + "                 Grados Rankine: " + r);
 
-            resultado5.setText("Grados Celsius: " + c + "\nGrados Fahrenheit: " + f + "\nGrados Kelvin: " + k + "\nGrados Rankine: " + r);
         }else{
             prob.Snack(view);
         }
     }
+
 }
